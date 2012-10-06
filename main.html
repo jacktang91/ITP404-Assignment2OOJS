@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Accordion solution</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div id="accordion1" class="accordion">
+  <div class="label"><span id="eA1" class="link">Click to expand all.</span></div>
+  <div class="content"><span id="cA1" class="link">Click to collapse all.</span></div>
+  <div class="label"><span id="fade1" class="link">Click to fade in and out.</span></div>
+  <div class="content">This is some content for label 2</div>
+  <div class="label"><span id="w1" class="link">Click to resize width.</span></div>
+  <div class="content">This is some content for label 3</div>
+</div>
+
+<div id="accordion2" class="accordion">
+  <div class="label"><span id="eA2" class="link">Click to expand all.</span></div>
+  <div class="content"><span id="cA2" class="link">Click to collapse all.</span></div>
+  <div class="label"><span id="fade2" class="link">Click to fade in and out.</span></div>
+  <div class="content">This is some content for label 2</div>
+  <div class="label"><span id="w2" class="link">Click to resize width.</span></div>
+  <div class="content">This is some content for label 3</div>
+</div>
+
+<div id="accordion3" class="accordion">
+  <div class="label"><span id="eA3" class="link">Click to expand all.</span></div>
+  <div class="content"><span id="cA3" class="link">Click to collapse all.</span></div>
+  <div class="label"><span id="fade3" class="link">Click to fade in and out.</span></div>
+  <div class="content">This is some content for label 2</div>
+  <div class="label"><span id="w3" class="link">Click to resize width.</span></div>
+  <div class="content">This is some content for label 3</div>
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="assignment.js"></script>
+<script>
+  var a1 = new Accordion({
+    sel: '#accordion1',
+    speed: 300,
+    colour: 'green',
+    w: '300px'
+  });
+
+  var a2 = new Accordion({
+    sel: '#accordion2',
+    speed: 200,
+    colour: 'blue',
+    w: '200px' 
+  })
+
+  var a3 = new Accordion({
+    sel: '#accordion3',
+    speed: 100,
+    colour: 'orange',
+    w: '150px'
+  })
+
+  $('#eA1').bind('click', function(){a1.expandAll()});
+  $('#eA2').bind('click', function(){a2.expandAll()});
+  $('#eA3').bind('click', function(){a3.expandAll()});
+
+  $('#cA1').bind('click', function(){a1.collapseAll()});
+  $('#cA2').bind('click', function(){a2.collapseAll()});
+  $('#cA3').bind('click', function(){a3.collapseAll()});
+
+  $('#w1').bind('click', function(){a1.resize()});
+  $('#w2').bind('click', function(){a2.resize()});
+  $('#w3').bind('click', function(){a3.resize()});
+
+  $('#fade1').bind('click', function(){a1.fade()});
+  $('#fade2').bind('click', function(){a2.fade()});
+  $('#fade3').bind('click', function(){a3.fade()});
+</script>
+
+</body>
+</html>
